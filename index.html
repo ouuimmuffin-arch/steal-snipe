@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Server Sniper</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="navigation">
+  <div class="nav-brand"><h1><span>Server Sniper</span></h1></div>
+  <div class="nav-tabs">
+    <button class="nav-tab active" data-tab="snipe-tab"><span>Server Snipe</span></button>
+    <button class="nav-tab" data-tab="how-tab"><span>How it Works</span></button>
+  </div>
+</div>
+
+<!-- SERVER SNIPE TAB -->
+<div class="tab-content active" id="snipe-tab">
+  <div class="centered-container">
+    <div class="loader hidden" id="loader">
+      <div class="dot dot1"></div>
+      <div class="dot dot2"></div>
+      <div class="dot dot3"></div>
+    </div>
+    <button class="btn-primary" id="start-btn"><span>Start Server Snipe</span></button>
+    <div class="loot-summary hidden" id="server-found">
+      <h3>Server Found!</h3>
+      <button class="btn-primary" id="join-btn"><span>Join Server</span></button>
+    </div>
+  </div>
+</div>
+
+<!-- HOW IT WORKS TAB -->
+<div class="tab-content" id="how-tab">
+  <div class="help-content">
+    <h2>How it Works</h2>
+    <video src="videos/video.mp4" controls style="width:100%; border-radius:16px; box-shadow:0 10px 40px rgba(16,185,129,0.3);"></video>
+  </div>
+</div>
+
+<div class="custom-notif" id="notif">Server Found!</div>
+
+<script src="script.js"></script>
+</body>
+</html>
