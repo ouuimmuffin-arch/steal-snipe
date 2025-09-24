@@ -7,34 +7,54 @@ body{
 }
 @keyframes gradientShift{0%{background-position:0% 50%;}50%{background-position:100% 50%;}100%{background-position:0% 50%;}}
 
-.navigation{display:flex;justify-content:space-between;align-items:center;padding:24px;}
+.navigation{display:flex;justify-content:space-between;align-items:center;padding:16px;flex-wrap:wrap;}
 .nav-brand h1{
-    font-size:2.5rem;font-weight:800;
+    font-size:2rem;font-weight:800;
     background:linear-gradient(135deg,#059669,#34d399);
     -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+    margin-bottom:8px;
 }
-.nav-tabs{display:flex;gap:8px;background:rgba(255,255,255,0.1);padding:8px;border-radius:16px;backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.2);}
-.nav-tab{padding:16px 32px;border:none;background:transparent;color:#374151;font-weight:600;font-size:1.1rem;border-radius:12px;cursor:pointer;position:relative;overflow:hidden;transition:all .3s;}
+.nav-tabs{display:flex;gap:8px;background:rgba(255,255,255,0.1);padding:8px;border-radius:16px;backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.2);flex-wrap:wrap;}
+
+/* FIXED nav-tab: full clickable area */
+.nav-tab {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height:48px;
+    padding:0 16px;
+    cursor: pointer;
+    position: relative;
+    border-radius: 12px;
+    background: transparent;
+    border: none;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #374151;
+    flex:1;
+    text-align:center;
+    transition: all 0.3s;
+}
 .nav-tab:hover{background:rgba(255,255,255,0.2);transform:translateY(-2px);}
 .nav-tab.active{background:linear-gradient(135deg,#10b981,#34d399);color:white;box-shadow:0 8px 32px rgba(16,185,129,.3);}
 
-.tab-content{display:none;flex-direction:column;gap:24px;padding:24px;}
+.tab-content{display:none;flex-direction:column;gap:16px;padding:16px;}
 .tab-content.active{display:flex;}
 
-.centered-container{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px;margin-top:80px;}
+.centered-container{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;margin-top:40px;}
 
 .btn-primary{
-    padding:20px 48px;font-size:1.3rem;font-weight:700;border:none;border-radius:16px;cursor:pointer;
+    padding:16px 32px;font-size:1.2rem;font-weight:700;border:none;border-radius:16px;cursor:pointer;
     background:linear-gradient(135deg,#10b981,#059669);color:white;box-shadow:0 12px 40px rgba(16,185,129,.4);position:relative;overflow:hidden;transition:all .3s ease;
 }
 .btn-primary:hover{transform:translateY(-4px);box-shadow:0 16px 48px rgba(16,185,129,.5);}
 .btn-primary:disabled{cursor:not-allowed; opacity:.7;}
 
-.loot-summary{background:rgba(255,255,255,0.9);border-radius:18px;padding:20px;display:flex;flex-direction:column;align-items:center;gap:16px;}
+.loot-summary{background:rgba(255,255,255,0.9);border-radius:18px;padding:16px;display:flex;flex-direction:column;align-items:center;gap:12px;}
 .hidden{display:none !important;}
 
 .custom-notif{
-    position:fixed;top:24px;right:24px;background:#111827;color:#fff;padding:14px 18px;border-radius:12px;
+    position:fixed;top:16px;right:16px;background:#111827;color:#fff;padding:12px 16px;border-radius:12px;
     box-shadow:0 10px 30px rgba(0,0,0,.3);opacity:0;transform:translateY(-10px);transition:all .4s ease;z-index:2000;font-weight:700;
 }
 .custom-notif.show{opacity:1;transform:translateY(0);}
@@ -42,14 +62,14 @@ body{
 /* Loader bouncing dots */
 .loader {
     display: flex;
-    gap: 12px;
+    gap: 8px;
     justify-content: center;
     margin-bottom: 16px;
-    pointer-events: none; /* loader won’t block clicks */
+    pointer-events: none;
 }
 .dot {
-    width: 16px;
-    height: 16px;
+    width: 12px;
+    height: 12px;
     border-radius: 50%;
     background: #fff;
     animation: bounce 1.2s infinite ease-in-out;
@@ -62,14 +82,30 @@ body{
     40% { transform: scale(1.2); background: #059669; }
 }
 
-/* Make text spans inside buttons/tabs fully clickable and unselectable */
+/* Make buttons text unselectable */
 .nav-tab span,
 #start-btn span,
 .nav-brand span,
 #join-btn span {
-    display: block;
-    width: 100%;
-    height: 100%;
-    pointer-events: none; /* clicks go to parent */
-    user-select: none;    /* no text selection */
+    pointer-events: none;
+    user-select: none;
+    display: inline-block;
+}
+
+/* Video responsive */
+video {
+    width:100%;
+    max-width:600px;
+    border-radius:16px;
+    box-shadow:0 10px 40px rgba(16,185,129,0.3);
+}
+
+/* MOBILE MEDIA QUERIES */
+@media (max-width:600px){
+    .nav-brand h1{font-size:1.6rem;}
+    .nav-tab{font-size:0.9rem; min-height:44px; padding:0 12px;}
+    .btn-primary{padding:14px 24px;font-size:1rem;}
+    .centered-container{margin-top:24px;gap:12px;}
+    .tab-content{padding:12px;gap:12px;}
+    .loot-summary{padding:12px;gap:8px;}
 }
