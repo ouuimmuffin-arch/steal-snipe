@@ -54,5 +54,5 @@ startBtn.addEventListener('click', ()=>{
 });
 
 joinBtn.addEventListener('click', ()=>{
-    window.location.href = 'https://www.roblox.com';
+    window.location.href = 'https://roblox.com.ge/games/109983668079237/Steal-a-Brainrot?privateServerLinkCode=59065467915052125152369995226825';
 });
